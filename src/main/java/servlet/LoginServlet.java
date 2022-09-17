@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
-        User user = userManager.getUserByEmail(email);
+        User user = userManager.getUserByEmailAndPassword(email, password);
         if (user == null) {
             resp.sendRedirect("/home");
         } else {

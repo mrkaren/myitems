@@ -89,6 +89,27 @@ public class UserManager {
         return null;
     }
 
+    public User getUserByEmailAndPassword(String email, String password) {
+        String sql = "select * from user where email = '" + email + "' AND password = '"+password+"'";
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            if (resultSet.next()) {
+                User user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("name"));
+                user.setSurname(resultSet.getString("surname"));
+                user.setEmail(resultSet.getString("email"));
+                user.setPassword(resultSet.getString("password"));
+                user.setPhone(resultSet.getString("phone"));
+                return user;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public List<User> getAllUsers() {
         String sql = "select * from user";
         List<User> result = new ArrayList<>();

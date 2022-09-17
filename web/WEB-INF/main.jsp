@@ -1,18 +1,13 @@
 <%@ page import="model.User" %>
 <%@ page import="model.Category" %>
 <%@ page import="java.util.List" %>
-<%@ page import="model.Item" %><%--
-  Created by IntelliJ IDEA.
-  User: karen
-  Date: 26.02.22
-  Time: 10:26
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="model.Item" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>
+    <title>Main
     </title>
+    <link href="/css/main.css" rel="stylesheet">
 </head>
 <body>
 
